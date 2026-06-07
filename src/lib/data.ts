@@ -76,9 +76,13 @@ export const projects: Project[] = [
     title: "MASERATI × GARMIN",
     category: "producto",
     categoryLabel: "PRODUCTO",
-    thumbnail: "/img/projects/reloj-maserati.jpg",
+    thumbnail: "/img/projects/reloj-maserati-1.jpg",
     meta: "Diseño de producto · UPV",
-    images: [{ src: "/img/projects/reloj-maserati.jpg" }],
+    images: [
+      { src: "/img/projects/reloj-maserati-1.jpg" },
+      { src: "/img/projects/reloj-maserati-2.jpg" },
+      { src: "/img/projects/reloj-maserati-3.jpg" },
+    ],
   },
   {
     id: "trofeo",
