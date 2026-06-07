@@ -62,10 +62,10 @@ function Timeline({ items }: { items: TimelineEntry[] }) {
 export default function Studio() {
   return (
     <section
-      id="studio"
+      id="sobre-mi"
       className="py-20 md:py-32 lg:py-40 px-6 md:px-12 lg:px-20"
     >
-      <SectionHeader title="STUDIO" />
+      <SectionHeader title="SOBRE MÍ" />
 
       <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-24 mb-16 lg:mb-28">
         {/* Bio */}
