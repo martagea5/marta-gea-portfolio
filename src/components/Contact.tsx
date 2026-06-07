@@ -68,7 +68,7 @@ export default function Contact() {
         >
           <a
             href={asset("/portfolio-presentacion.pdf")}
-            download="Portfolio_MartaGea.pdf"
+            download="PORTFOLIO_MartaGea_2026.pdf"
             className="inline-flex items-center gap-3 px-8 py-4 bg-white text-charcoal text-[11px] tracking-[0.25em] uppercase hover:bg-stone-100 transition-all duration-300 group"
           >
             <svg

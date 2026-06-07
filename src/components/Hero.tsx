@@ -63,7 +63,7 @@ export default function Hero() {
 
         <a
             href={asset("/portfolio-presentacion.pdf")}
-            download="Portfolio_MartaGea.pdf"
+            download="PORTFOLIO_MartaGea_2026.pdf"
             className="inline-flex items-center gap-3 px-6 py-3 border border-stone-300 text-[11px] tracking-[0.25em] uppercase text-charcoal hover:bg-charcoal hover:text-white hover:border-charcoal transition-all duration-300 group"
           >
             <svg
