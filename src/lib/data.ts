@@ -111,6 +111,17 @@ export const projects: Project[] = [
     meta: "Diseño gráfico · Universitat Politècnica de València",
     images: [{ src: "/img/projects/merchandising-upv.jpg" }],
   },
+  {
+    id: "pigment",
+    title: "PIGMENT",
+    category: "grafico",
+    categoryLabel: "GRÁFICO",
+    thumbnail: "/img/projects/pigment.jpg",
+    meta: "Diseño gráfico · Cartelería y exposición",
+    description:
+      "Proyecto de diseño gráfico que añade color al espacio: cartelería de evento, identidad visual y aplicaciones para una exposición de producto.",
+    images: [{ src: "/img/projects/pigment.jpg" }],
+  },
 ];
 
 export interface Skill {
