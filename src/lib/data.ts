@@ -71,8 +71,8 @@ export const projects: Project[] = [
     categoryLabel: "INTERIORISMO",
     thumbnail: "/img/projects/popedeli-1.jpg",
     description:
-      "Diseño de interiores del restaurante POPE DELI en Valencia. Un delicatessen neoyorquino donde el pastrami es protagonista: atmósfera cálida y contemporánea que fusiona la estética deli clásica con detalles actuales en el corazón de la ciudad.",
-    meta: "Interiorismo comercial · Valencia · Salamandra Interiorismo",
+      "Proyecto de interiorismo hospitality para restaurante en Valencia, inspirado en el concepto de delicatessen neoyorquino. Desarrollo de documentación gráfica y técnica — plantas, pavimentos, revestimientos y secciones constructivas. Coordinación de oficios, proveedores y plazos de ejecución. Gestión de pedidos y presupuestos, presentaciones en Adobe InDesign, seguimiento de obra y asistencia técnica.",
+    meta: "Interiorismo hospitality · Valencia · Salamandra Interiorismo",
     images: [
       { src: "/img/projects/popedeli-1.jpg", caption: "Fachada POPE DELI Valencia" },
       { src: "/img/projects/popedeli-2.jpg", caption: "Zona de barra alta" },
@@ -86,6 +86,10 @@ export const projects: Project[] = [
       { src: "/img/projects/popedeli-10.jpg", caption: "Detalle lavabo" },
       { src: "/img/projects/popedeli-11.jpg", caption: "Estantería de barra" },
       { src: "/img/projects/popedeli-12.jpg", caption: "Sala con mesa redonda" },
+      { src: "/img/projects/popedeli-13.jpg", caption: "Planta propuesta" },
+      { src: "/img/projects/popedeli-14.jpg", caption: "Planta de pavimentos" },
+      { src: "/img/projects/popedeli-15.jpg", caption: "Planta de revestimientos" },
+      { src: "/img/projects/popedeli-16.jpg", caption: "Sección constructiva" },
     ],
   },
   {

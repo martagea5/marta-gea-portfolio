@@ -77,7 +77,7 @@ export const cvData = {
   languages: [
     { name: "Español", level: "Nativo" },
     { name: "Catalán", level: "Nativo" },
-    { name: "Inglés", level: "B2 Cambridge" },
+    { name: "Inglés", level: "B2 Level" },
     { name: "Italiano", level: "A2 ACLES" },
   ] satisfies CVLanguage[],
   tools: [
