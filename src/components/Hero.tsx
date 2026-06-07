@@ -50,14 +50,14 @@ export default function Hero() {
         initial={{ opacity: 0, scale: 1.02 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.1, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-        className="relative h-full min-h-[400px] lg:min-h-[500px] overflow-hidden"
+        className="relative h-full min-h-[500px] lg:min-h-[600px] overflow-hidden"
       >
         <Image
           src="/img/marta-hero.jpg"
           alt="Marta Gea"
           fill
           priority
-          className="object-cover object-center"
+          className="object-cover object-top"
           sizes="(max-width: 1024px) 100vw, 50vw"
         />
       </motion.div>
