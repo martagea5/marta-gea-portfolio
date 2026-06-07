@@ -1,6 +1,11 @@
 "use client";
 
+import { asset } from "@/lib/assets";
+import { cvData } from "@/lib/cv-data";
+
 export default function CVPage() {
+  const pdfUrl = asset("/cv-marta-gea.pdf");
+
   return (
     <>
       <style>{`
@@ -57,7 +62,6 @@ export default function CVPage() {
           box-shadow: 0 8px 40px rgba(0,0,0,0.08);
         }
 
-        /* Header */
         .cv__header {
           display: grid;
           grid-template-columns: 1fr auto;
@@ -77,10 +81,7 @@ export default function CVPage() {
           color: #1a1a1a;
         }
 
-        .cv__name em {
-          font-style: italic;
-          color: #888;
-        }
+        .cv__name em { font-style: italic; color: #888; }
 
         .cv__title {
           font-size: 11px;
@@ -98,21 +99,15 @@ export default function CVPage() {
           line-height: 1.9;
         }
 
-        .cv__contact a {
-          color: #555;
-          text-decoration: none;
-        }
-
+        .cv__contact a { color: #555; text-decoration: none; }
         .cv__contact a:hover { color: #1a1a1a; }
 
-        /* Body */
         .cv__body {
           display: grid;
           grid-template-columns: 1fr 220px;
           gap: 48px;
         }
 
-        /* Section */
         .cv__section { margin-bottom: 32px; }
 
         .cv__section-title {
@@ -125,7 +120,6 @@ export default function CVPage() {
           border-bottom: 1px solid #eee;
         }
 
-        /* About */
         .cv__about {
           font-size: 14px;
           font-weight: 300;
@@ -133,10 +127,7 @@ export default function CVPage() {
           color: #444;
         }
 
-        /* Timeline */
         .cv__timeline { display: flex; flex-direction: column; gap: 20px; }
-
-        .cv__entry {}
 
         .cv__entry-date {
           font-size: 9px;
@@ -167,26 +158,6 @@ export default function CVPage() {
           line-height: 1.7;
         }
 
-        /* Sidebar */
-        .cv__sidebar {}
-
-        /* Tags */
-        .cv__tags {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 6px;
-        }
-
-        .cv__tag {
-          font-size: 10px;
-          letter-spacing: 0.05em;
-          color: #555;
-          background: #f5f4f0;
-          padding: 4px 10px;
-          border-radius: 0;
-        }
-
-        /* Languages */
         .cv__lang-item {
           display: flex;
           justify-content: space-between;
@@ -213,7 +184,6 @@ export default function CVPage() {
           background: #888;
         }
 
-        /* Skills list */
         .cv__skill-item {
           font-size: 11px;
           font-weight: 300;
@@ -223,7 +193,6 @@ export default function CVPage() {
           letter-spacing: 0.03em;
         }
 
-        /* URL */
         .cv__portfolio-link {
           font-size: 10px;
           letter-spacing: 0.15em;
@@ -234,7 +203,6 @@ export default function CVPage() {
 
         .cv__portfolio-link:hover { color: #1a1a1a; }
 
-        /* Certifications */
         .cv__cert-item {
           font-size: 11px;
           font-weight: 300;
@@ -243,226 +211,139 @@ export default function CVPage() {
           line-height: 1.5;
         }
 
-        /* Print */
         @media print {
           body { background: white; padding: 0; }
           .cv-actions { display: none; }
-          .cv {
-            box-shadow: none;
-            padding: 24px 32px;
-            max-width: 100%;
-          }
+          .cv { box-shadow: none; padding: 24px 32px; max-width: 100%; }
         }
 
-        @page {
-          size: A4;
-          margin: 0;
-        }
+        @page { size: A4; margin: 0; }
       `}</style>
 
       <div className="cv-actions">
-        <a
-          href="/marta-gea-portfolio/cv-marta-gea.pdf"
-          download="CV_MartaGea.pdf"
-          className="btn"
-        >
+        <a href={pdfUrl} download="CV_MartaGea.pdf" className="btn">
           ↓ Descargar PDF
         </a>
-        <button className="btn btn--primary" onClick={() => { if (typeof window !== 'undefined') window.print(); }}>
+        <button
+          className="btn btn--primary"
+          onClick={() => {
+            if (typeof window !== "undefined") window.print();
+          }}
+        >
           Imprimir / Guardar como PDF
         </button>
       </div>
 
       <article className="cv">
-        {/* ── Header ── */}
         <header className="cv__header">
           <div>
             <h1 className="cv__name">
-              Marta Gea <em>Almudever</em>
+              {cvData.name} <em>{cvData.surname}</em>
             </h1>
-            <p className="cv__title">Diseñadora de Interiores &amp; Producto</p>
+            <p className="cv__title">{cvData.title}</p>
           </div>
           <address className="cv__contact">
-            <a href="mailto:martagea5@hotmail.es">martagea5@hotmail.es</a>
+            <a href={`mailto:${cvData.contact.email}`}>{cvData.contact.email}</a>
             <br />
-            <a href="tel:+34635911200">635 911 200</a>
+            <a href={cvData.contact.phoneHref}>{cvData.contact.phone}</a>
             <br />
             <a
-              href="https://www.linkedin.com/in/marta-gea-483b75255/"
+              href={cvData.contact.linkedinHref}
               target="_blank"
               rel="noopener noreferrer"
             >
-              linkedin.com/in/marta-gea
+              {cvData.contact.linkedin}
             </a>
             <br />
-            Valencia, España
+            {cvData.contact.location}
           </address>
         </header>
 
         <div className="cv__body">
-          {/* ── Left column ── */}
           <div>
-            {/* Sobre mí */}
             <section className="cv__section">
               <h2 className="cv__section-title">Perfil</h2>
-              <p className="cv__about">
-                Ingeniera de Diseño Industrial con más de 2 años de experiencia en
-                interiorismo residencial y diseño de producto. Especializada en
-                proyectos integrales de viviendas: planimetría, distribución,
-                modelado 3D, renders y dirección creativa. Combina rigor técnico y
-                sensibilidad estética en cada proyecto, con especial atención al
-                detalle y a la coherencia del espacio.
-              </p>
+              <p className="cv__about">{cvData.profile}</p>
             </section>
 
-            {/* Experiencia */}
             <section className="cv__section">
               <h2 className="cv__section-title">Experiencia</h2>
               <div className="cv__timeline">
-                <div className="cv__entry">
-                  <p className="cv__entry-date">Mayo 2024 — Presente</p>
-                  <p className="cv__entry-role">Diseñadora</p>
-                  <p className="cv__entry-company">Salamandra Interiorismo · Valencia</p>
-                  <p className="cv__entry-desc">
-                    Desarrollo de proyectos de interiorismo residencial: viviendas
-                    unifamiliares, reformas integrales, distribución de espacios,
-                    selección de materiales y acompañamiento en obra. También
-                    participación en proyectos comerciales como{" "}
-                    <strong>Casa Decor Madrid 2025</strong> y{" "}
-                    <strong>POPE DELI Valencia</strong>. Planimetría en AutoCAD,
-                    modelado y renders en SketchUp y D5 Render, propuestas en
-                    InDesign, gestión de presupuestos, atención al cliente e
-                    identidad corporativa.
-                  </p>
-                </div>
-
-                <div className="cv__entry">
-                  <p className="cv__entry-date">Septiembre 2023 — Mayo 2024</p>
-                  <p className="cv__entry-role">Diseñadora de Interiores</p>
-                  <p className="cv__entry-company">Salamandra Interiorismo · Valencia</p>
-                  <p className="cv__entry-desc">
-                    Prácticas en interiorismo residencial: planimetrías, propuestas
-                    visuales, modelado y renders en AutoCAD y 3DS Max, apoyo en
-                    reformas de vivienda y proyectos comerciales puntuales.
-                  </p>
-                </div>
-
-                <div className="cv__entry">
-                  <p className="cv__entry-date">Junio — Septiembre 2023</p>
-                  <p className="cv__entry-role">Ingeniera de Diseño Junior</p>
-                  <p className="cv__entry-company">Fab 4.0 Hose S.L. · Valencia</p>
-                  <p className="cv__entry-desc">
-                    Automatización de procesos en Excel con macros, revisión de planos
-                    en SolidWorks, controles de calidad y generación de fichas técnicas.
-                  </p>
-                </div>
-
-                <div className="cv__entry">
-                  <p className="cv__entry-date">Julio 2018</p>
-                  <p className="cv__entry-role">Becaria — Urbanismo</p>
-                  <p className="cv__entry-company">Ajuntament d'Alcàsser · Valencia</p>
-                  <p className="cv__entry-desc">
-                    Bocetos de fachadas protegidas, revisión de daños estructurales y
-                    propuestas de solución.
-                  </p>
-                </div>
+                {cvData.experience.map((entry) => (
+                  <div key={`${entry.date}-${entry.role}`} className="cv__entry">
+                    {entry.date && (
+                      <p className="cv__entry-date">{entry.date}</p>
+                    )}
+                    <p className="cv__entry-role">{entry.role}</p>
+                    <p className="cv__entry-company">{entry.company}</p>
+                    {entry.description && (
+                      <p className="cv__entry-desc">{entry.description}</p>
+                    )}
+                  </div>
+                ))}
               </div>
             </section>
 
-            {/* Formación */}
             <section className="cv__section" style={{ marginBottom: 0 }}>
               <h2 className="cv__section-title">Formación</h2>
               <div className="cv__timeline">
-                <div className="cv__entry">
-                  <p className="cv__entry-role">
-                    Ingeniería de Diseño Industrial y Desarrollo del Producto
-                  </p>
-                  <p className="cv__entry-company">
-                    Universitat Politècnica de València (UPV)
-                  </p>
-                </div>
-                <div className="cv__entry">
-                  <p className="cv__entry-role">Bachillerato en Ciencias Tecnológicas</p>
-                  <p className="cv__entry-company">IES Alcàsser</p>
-                </div>
+                {cvData.education.map((entry) => (
+                  <div key={entry.role} className="cv__entry">
+                    <p className="cv__entry-role">{entry.role}</p>
+                    <p className="cv__entry-company">{entry.company}</p>
+                  </div>
+                ))}
               </div>
             </section>
           </div>
 
-          {/* ── Sidebar ── */}
           <aside className="cv__sidebar">
-            {/* Portfolio */}
             <section className="cv__section">
               <h2 className="cv__section-title">Portfolio</h2>
               <a
-                href="https://martagea5.github.io/marta-gea-portfolio/"
+                href={cvData.portfolioUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="cv__portfolio-link"
               >
-                martagea5.github.io/<br />marta-gea-portfolio
+                martagea5.github.io/
+                <br />
+                marta-gea-portfolio
               </a>
             </section>
 
-            {/* Idiomas */}
             <section className="cv__section">
               <h2 className="cv__section-title">Idiomas</h2>
-
-              {[
-                { name: "Español", level: "Nativo", pct: 100 },
-                { name: "Catalán", level: "Nativo", pct: 100 },
-                { name: "Inglés", level: "B2 Level", pct: 75 },
-                { name: "Italiano", level: "A2 ACLES", pct: 35 },
-              ].map((l) => (
-                <div key={l.name}>
+              {cvData.languages.map((lang) => (
+                <div key={lang.name}>
                   <div className="cv__lang-item">
-                    <span className="cv__lang-name">{l.name}</span>
-                    <span className="cv__lang-level">{l.level}</span>
+                    <span className="cv__lang-name">{lang.name}</span>
+                    <span className="cv__lang-level">{lang.level}</span>
                   </div>
                   <div className="cv__lang-bar">
                     <div
                       className="cv__lang-fill"
-                      style={{ width: `${l.pct}%` }}
+                      style={{ width: `${lang.pct}%` }}
                     />
                   </div>
                 </div>
               ))}
             </section>
 
-            {/* Herramientas */}
             <section className="cv__section">
               <h2 className="cv__section-title">Herramientas</h2>
-              {[
-                "AutoCAD",
-                "SketchUp",
-                "D5 Render",
-                "3DS Max",
-                "V-Ray",
-                "Rhino",
-                "Blender",
-                "Photoshop",
-                "Illustrator",
-                "InDesign",
-                "SolidWorks",
-                "WordPress / HTML",
-              ].map((t) => (
-                <div key={t} className="cv__skill-item">
-                  {t}
+              {cvData.tools.map((tool) => (
+                <div key={tool} className="cv__skill-item">
+                  {tool}
                 </div>
               ))}
             </section>
 
-            {/* Certificaciones */}
             <section className="cv__section" style={{ marginBottom: 0 }}>
               <h2 className="cv__section-title">Certificaciones</h2>
-              {[
-                "ArchViz 3D Surrealista — Domestika",
-                "Generative AI for Everyone — Coursera",
-                "Supervised Machine Learning — Coursera",
-                "Permiso de conducir B",
-              ].map((c) => (
-                <p key={c} className="cv__cert-item">
-                  {c}
+              {cvData.certifications.map((cert) => (
+                <p key={cert} className="cv__cert-item">
+                  {cert}
                 </p>
               ))}
             </section>

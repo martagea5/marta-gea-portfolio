@@ -87,7 +87,7 @@ export default function Contact() {
             Descargar CV
           </a>
           <a
-            href="/marta-gea-portfolio/cv"
+            href={asset("/cv")}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-8 py-4 bg-white/10 text-white/70 text-[11px] tracking-[0.25em] uppercase hover:bg-white/20 hover:text-white transition-all duration-300"
