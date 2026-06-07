@@ -6,8 +6,8 @@ import SectionHeader from "./SectionHeader";
 const items = [
   {
     label: "EMAIL",
-    value: "martagea5@gmail.com",
-    href: "mailto:martagea5@gmail.com",
+    value: "martagea5@hotmail.es",
+    href: "mailto:martagea5@hotmail.es",
   },
   {
     label: "LINKEDIN",
