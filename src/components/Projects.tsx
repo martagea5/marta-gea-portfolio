@@ -1,0 +1,131 @@
+"use client";
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import SectionHeader from "./SectionHeader";
+import { projects, type ProjectCategory } from "@/lib/data";
+
+type Filter = "all" | ProjectCategory;
+
+const filters: { value: Filter; label: string }[] = [
+  { value: "all", label: "Todo" },
+  { value: "interiorismo", label: "Interiorismo" },
+  { value: "producto", label: "Producto" },
+  { value: "grafico", label: "Gráfico" },
+];
+
+export default function Projects() {
+  const [active, setActive] = useState<Filter>("all");
+
+  const filtered =
+    active === "all"
+      ? projects
+      : projects.filter((p) => p.category === active);
+
+  return (
+    <section
+      id="proyectos"
+      className="py-20 md:py-32 lg:py-40 px-6 md:px-12 lg:px-20"
+    >
+      <SectionHeader title="PROYECTOS" />
+
+      {/* Filters */}
+      <div className="flex justify-center gap-6 md:gap-8 mb-12 md:mb-16 flex-wrap">
+        {filters.map((f) => (
+          <button
+            key={f.value}
+            onClick={() => setActive(f.value)}
+            className={`text-[11px] tracking-[0.15em] pb-2 relative transition-colors ${
+              active === f.value
+                ? "text-charcoal"
+                : "text-stone-300 hover:text-stone-500"
+            }`}
+          >
+            {f.label}
+            {active === f.value && (
+              <motion.span
+                layoutId="filterUnderline"
+                className="absolute bottom-0 left-0 right-0 h-px bg-charcoal"
+                transition={{ duration: 0.3 }}
+              />
+            )}
+          </button>
+        ))}
+      </div>
+
+      {/* Grid */}
+      <motion.div
+        layout
+        className="grid grid-cols-1 md:grid-cols-2 gap-[2px]"
+      >
+        <AnimatePresence mode="popLayout">
+          {filtered.map((project) => (
+            <motion.article
+              key={project.id}
+              layout
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.96 }}
+              transition={{ duration: 0.4 }}
+              className={`group bg-stone-50 overflow-hidden ${
+                project.featured ? "md:col-span-2" : ""
+              }`}
+            >
+              <a
+                href={`#${project.id}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  const el = document.getElementById(project.id);
+                  if (el) {
+                    const y =
+                      el.getBoundingClientRect().top + window.scrollY - 72;
+                    window.scrollTo({ top: y, behavior: "smooth" });
+                  }
+                }}
+                className="block relative overflow-hidden"
+              >
+                <div
+                  className={`relative overflow-hidden ${
+                    project.featured
+                      ? "aspect-[21/9]"
+                      : "aspect-[16/10]"
+                  }`}
+                >
+                  <Image
+                    src={project.thumbnail}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
+
+                {/* Overlay */}
+                <div
+                  className={`absolute inset-x-0 bottom-0 px-8 py-8 md:px-10 md:py-8 bg-gradient-to-t from-ink/70 via-ink/30 to-transparent text-white transition-all duration-500 ${
+                    project.featured
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0"
+                  }`}
+                >
+                  <span className="block text-[9px] tracking-[0.3em] opacity-80 mb-2">
+                    {project.categoryLabel}
+                  </span>
+                  <h3 className="text-base md:text-lg font-light tracking-[0.15em]">
+                    {project.title}
+                  </h3>
+                  {project.featured && project.description && (
+                    <p className="text-[13px] font-light mt-2 opacity-70 max-w-lg">
+                      {project.description}
+                    </p>
+                  )}
+                </div>
+              </a>
+            </motion.article>
+          ))}
+        </AnimatePresence>
+      </motion.div>
+    </section>
+  );
+}
