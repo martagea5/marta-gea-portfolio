@@ -14,7 +14,7 @@ const links = [
 
   { href: "#proyectos", label: "PROYECTOS" },
 
-  { href: "#studio", label: "STUDIO" },
+  { href: "#studio", label: "SOBRE MÍ" },
 
   { href: "#contacto", label: "CONTACTO" },
 
