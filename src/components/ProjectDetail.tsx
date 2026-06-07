@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import SectionHeader from "./SectionHeader";
 import type { Project } from "@/lib/data";
+import { asset } from "@/lib/assets";
 
 function getRowCols(totalImages: number, index: number): string {
   const patterns: Record<number, string[]> = {
@@ -78,10 +79,10 @@ export default function ProjectDetail({ project }: { project: Project }) {
                 <figure
                   key={ci}
                   className="relative overflow-hidden bg-white group cursor-zoom-in"
-                  onClick={() => setLightbox(img.src)}
+                  onClick={() => setLightbox(asset(img.src))}
                 >
                   <Image
-                    src={img.src}
+                    src={asset(img.src)}
                     alt={img.caption ?? project.title}
                     width={1200}
                     height={800}
@@ -117,7 +118,7 @@ export default function ProjectDetail({ project }: { project: Project }) {
               &#10005;
             </button>
             <Image
-              src={lightbox}
+              src={lightbox ?? ""}
               alt=""
               width={1600}
               height={1000}

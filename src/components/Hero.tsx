@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { asset } from "@/lib/assets";
 
 export default function Hero() {
   return (
@@ -53,7 +54,7 @@ export default function Hero() {
         className="relative flex items-center justify-center min-h-[500px] lg:min-h-[700px] bg-stone-50"
       >
         <Image
-          src="/img/marta-hero.jpg"
+          src={asset("/img/marta-hero.jpg")}
           alt="Marta Gea"
           width={768}
           height={1024}

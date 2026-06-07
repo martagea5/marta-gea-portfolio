@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import SectionHeader from "./SectionHeader";
 import { projects } from "@/lib/data";
+import { asset } from "@/lib/assets";
 import type { Filter } from "./Portfolio";
 
 const filters: { value: Filter; label: string }[] = [
@@ -94,7 +95,7 @@ export default function Projects({ active, onFilterChange }: Props) {
                   }`}
                 >
                   <Image
-                    src={project.thumbnail}
+                    src={asset(project.thumbnail)}
                     alt={project.title}
                     fill
                     className="object-contain bg-stone-50 transition-transform duration-700 ease-out group-hover:scale-[1.02]"
