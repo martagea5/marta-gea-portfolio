@@ -6,6 +6,7 @@ import Image from "next/image";
 import SectionHeader from "./SectionHeader";
 import type { Project } from "@/lib/data";
 import { asset } from "@/lib/assets";
+import { scrollToId } from "@/lib/scroll";
 
 interface NavProject {
   id: string;
@@ -31,7 +32,9 @@ function getRowCols(totalImages: number, index: number): string {
     return p[index % p.length] ?? "grid-cols-1";
   }
 
-  const cycle = index % 5;
+  if (index === 0) return "grid-cols-1";
+
+  const cycle = (index - 1) % 5;
   if (cycle < 2) return "grid-cols-2";
   if (cycle < 3) return "grid-cols-1";
   return "grid-cols-2";
@@ -63,6 +66,10 @@ export default function ProjectDetail({
     onNavigate(id);
   };
 
+  const scrollToProjects = () => {
+    scrollToId("proyectos");
+  };
+
   return (
     <>
       <section
@@ -74,12 +81,7 @@ export default function ProjectDetail({
             href="#proyectos"
             onClick={(e) => {
               e.preventDefault();
-              const el = document.getElementById("proyectos");
-              if (el) {
-                const y =
-                  el.getBoundingClientRect().top + window.scrollY - 80;
-                window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
-              }
+              scrollToProjects();
             }}
             className="inline-block mb-10 text-[10px] tracking-[0.2em] text-stone-400 hover:text-charcoal transition-colors"
           >
@@ -114,7 +116,7 @@ export default function ProjectDetail({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.6, delay: ri * 0.08 }}
-                className={`grid gap-[2px] ${
+                className={`grid gap-[2px] items-start ${
                   row.length === 1
                     ? "grid-cols-1"
                     : "grid-cols-1 md:grid-cols-2"
@@ -123,10 +125,10 @@ export default function ProjectDetail({
                 {row.map((img, ci) => (
                   <figure
                     key={ci}
-                    className="overflow-hidden bg-white group"
+                    className="overflow-hidden bg-white group self-start w-full"
                   >
                     <div
-                      className="cursor-zoom-in"
+                      className="cursor-zoom-in leading-none"
                       onClick={() =>
                         setLightbox({
                           src: asset(img.src),
@@ -139,7 +141,7 @@ export default function ProjectDetail({
                         alt={img.caption ?? project.title}
                         width={1200}
                         height={800}
-                        className="w-full h-auto object-contain transition-transform duration-600 group-hover:scale-[1.02]"
+                        className="block w-full h-auto transition-transform duration-600 group-hover:scale-[1.02]"
                       />
                     </div>
                     {img.caption && (
@@ -178,12 +180,7 @@ export default function ProjectDetail({
               href="#proyectos"
               onClick={(e) => {
                 e.preventDefault();
-                const el = document.getElementById("proyectos");
-                if (el) {
-                  const y =
-                    el.getBoundingClientRect().top + window.scrollY - 80;
-                  window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
-                }
+                scrollToProjects();
               }}
               className="text-center text-[10px] tracking-[0.2em] text-stone-400 hover:text-charcoal transition-colors"
             >
