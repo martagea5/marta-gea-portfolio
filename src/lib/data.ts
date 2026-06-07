@@ -158,11 +158,11 @@ export interface TimelineEntry {
 export const experience: TimelineEntry[] = [
   {
     date: "May 2024 — Presente",
-    role: "Diseñadora",
+    role: "Diseñadora Senior",
     company: "Salamandra Interiorismo",
     meta: "Jornada completa · Bétera, Valencia",
     description:
-      "Profesional con amplia experiencia en diseño, gestión de proyectos, atención al cliente y soporte administrativo. Planimetría y visitas de obra, propuestas creativas en InDesign, diseño gráfico y modelado 3D en SketchUp, diseño y mantenimiento web con WordPress y Elementor, identidad corporativa, atención al cliente, gestión de presupuestos y facturas, y negociación con proveedores.",
+      "Amplia experiencia en diseño, gestión de proyectos, atención al cliente y soporte administrativo. Planimetría y visitas de obra, propuestas creativas en InDesign, diseño gráfico y modelado 3D en SketchUp, diseño y mantenimiento web en HTML, WordPress y Elementor, identidad corporativa, atención al cliente, gestión de presupuestos y facturas, y negociación con proveedores.",
   },
   {
     date: "Sep 2023 — May 2024",
