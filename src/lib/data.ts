@@ -146,23 +146,42 @@ export interface TimelineEntry {
   date?: string;
   role: string;
   company: string;
+  meta?: string;
   description?: string;
 }
 
 export const experience: TimelineEntry[] = [
   {
-    date: "2024 — Presente",
-    role: "Diseñadora Senior",
-    company: "Salamandra Interiorismo · Valencia",
+    date: "May 2024 — Presente",
+    role: "Diseñadora",
+    company: "Salamandra Interiorismo",
+    meta: "Jornada completa · Bétera, Valencia",
     description:
-      "Planimetría, propuestas de diseño, modelado 3D, identidad corporativa, diseño web y gestión integral de proyectos de interiorismo.",
+      "Profesional con amplia experiencia en diseño, gestión de proyectos, atención al cliente y soporte administrativo. Planimetría y visitas de obra, propuestas creativas en InDesign, diseño gráfico y modelado 3D en SketchUp, diseño y mantenimiento web con WordPress y Elementor, identidad corporativa, atención al cliente, gestión de presupuestos y facturas, y negociación con proveedores.",
   },
   {
-    date: "2023",
-    role: "Ingeniera de Diseño Junior",
-    company: "Fab 4.0 Hose S.L. · Sueca",
+    date: "Sep 2023 — May 2024",
+    role: "Diseñadora de Interiores",
+    company: "Salamandra Interiorismo",
+    meta: "Contrato de prácticas · Bétera, Valencia",
     description:
-      "Automatización de procesos, revisión de planos en SolidWorks, controles de calidad y fichas técnicas.",
+      "Prácticas en diseño de interiores: elaboración de planimetrías, desarrollo de propuestas visuales, modelado y renders en AutoCAD y 3ds Max, y apoyo en proyectos de interiorismo.",
+  },
+  {
+    date: "Jun 2023 — Sep 2023",
+    role: "Ingeniera de Diseño Junior",
+    company: "Fab 4.0 Hose S.L.",
+    meta: "Contrato de prácticas · Sueca, Valencia",
+    description:
+      "Automatización de procesos mediante plantillas en Excel con macros, revisión de planos en SolidWorks, toma de medidas y controles de calidad, generación de un estándar de calidad para la empresa y creación de fichas técnicas.",
+  },
+  {
+    date: "Jul 2018",
+    role: "Becaria",
+    company: "Ajuntament d'Alcàsser",
+    meta: "Contrato temporal · Alcàsser, Valencia",
+    description:
+      "Departamento de Urbanismo: elaboración de bocetos para fachadas protegidas, identificación y propuesta de soluciones para daños, recopilación de datos sobre el estado del alcantarillado y contribución al mantenimiento del patrimonio arquitectónico.",
   },
 ];
 

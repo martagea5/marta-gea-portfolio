@@ -48,6 +48,11 @@ function Timeline({ items }: { items: TimelineEntry[] }) {
           <p className="text-[13px] font-light text-stone-500">
             {item.company}
           </p>
+          {item.meta && (
+            <p className="text-[11px] font-light text-stone-300 mt-1">
+              {item.meta}
+            </p>
+          )}
           {item.description && (
             <p className="text-[13px] font-light text-stone-300 mt-2 leading-relaxed">
               {item.description}
