@@ -33,17 +33,17 @@ export default function Projects({
   return (
     <section
       id="proyectos"
-      className="py-20 md:py-32 lg:py-40 px-6 md:px-12 lg:px-20"
+      className="py-14 md:py-32 lg:py-40 px-4 md:px-12 lg:px-20"
     >
       <SectionHeader title="PROYECTOS" />
 
       {/* Filters */}
-      <div className="flex justify-center gap-6 md:gap-8 mb-12 md:mb-16 flex-wrap">
+      <div className="flex justify-center gap-4 sm:gap-6 md:gap-8 mb-10 md:mb-16 flex-wrap">
         {filters.map((f) => (
           <button
             key={f.value}
             onClick={() => onFilterChange(f.value)}
-            className={`text-[11px] tracking-[0.15em] pb-2 relative transition-colors ${
+            className={`text-[10px] sm:text-[11px] tracking-[0.12em] sm:tracking-[0.15em] pb-2 relative transition-colors ${
               active === f.value
                 ? "text-charcoal"
                 : "text-stone-300 hover:text-stone-500"
@@ -90,22 +90,32 @@ export default function Projects({
                 <div
                   className={`relative overflow-hidden bg-stone-200 ${
                     project.featured
-                      ? "aspect-[21/9]"
-                      : "aspect-[16/10]"
+                      ? "aspect-[4/3] md:aspect-[21/9]"
+                      : "aspect-[4/3] md:aspect-[16/10]"
                   }`}
                 >
                   <Image
                     src={asset(project.thumbnail)}
                     alt={project.title}
                     fill
-                    className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                    className="object-cover object-center transition-transform duration-700 ease-out md:group-hover:scale-[1.03]"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
 
-                {/* Overlay */}
+                {/* Mobile: info below image */}
+                <div className="md:hidden px-4 py-4 bg-white border-t border-stone-100">
+                  <span className="block text-[9px] tracking-[0.3em] text-stone-400 mb-1.5">
+                    {project.categoryLabel}
+                  </span>
+                  <h3 className="text-sm font-light tracking-[0.12em] text-charcoal">
+                    {project.title}
+                  </h3>
+                </div>
+
+                {/* Desktop: overlay */}
                 <div
-                  className={`absolute inset-x-0 bottom-0 px-8 py-8 md:px-10 md:py-8 bg-gradient-to-t from-ink/70 via-ink/30 to-transparent text-white transition-all duration-500 ${
+                  className={`hidden md:block absolute inset-x-0 bottom-0 px-10 py-8 bg-gradient-to-t from-ink/70 via-ink/30 to-transparent text-white transition-all duration-500 ${
                     project.featured
                       ? "opacity-100 translate-y-0"
                       : "opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0"
@@ -114,7 +124,7 @@ export default function Projects({
                   <span className="block text-[9px] tracking-[0.3em] opacity-80 mb-2">
                     {project.categoryLabel}
                   </span>
-                  <h3 className="text-base md:text-lg font-light tracking-[0.15em]">
+                  <h3 className="text-lg font-light tracking-[0.15em]">
                     {project.title}
                   </h3>
                   {project.featured && project.description && (

@@ -41,7 +41,7 @@ export default function ProjectDetail({ project }: { project: Project }) {
     <>
       <section
         id={project.id}
-        className="py-20 md:py-32 lg:py-40 px-6 md:px-12 lg:px-20 bg-offwhite border-t border-stone-100"
+        className="py-14 md:py-32 lg:py-40 px-4 md:px-12 lg:px-20 bg-offwhite border-t border-stone-100"
       >
         <SectionHeader
           title={project.title}

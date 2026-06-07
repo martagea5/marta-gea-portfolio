@@ -68,7 +68,7 @@ export default function Studio() {
   return (
     <section
       id="sobre-mi"
-      className="py-20 md:py-32 lg:py-40 px-6 md:px-12 lg:px-20"
+      className="py-14 md:py-32 lg:py-40 px-4 md:px-12 lg:px-20"
     >
       <SectionHeader title="SOBRE MÍ" />
 

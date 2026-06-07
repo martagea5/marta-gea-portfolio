@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen grid grid-cols-1 lg:grid-cols-2 items-center pt-[72px] px-6 md:px-12 lg:px-20 gap-10 lg:gap-20"
+      className="min-h-[auto] md:min-h-screen grid grid-cols-1 lg:grid-cols-2 items-center pt-[60px] md:pt-[72px] px-4 md:px-12 lg:px-20 gap-6 md:gap-10 lg:gap-20"
     >
       {/* Text */}
       <motion.div
@@ -51,7 +51,7 @@ export default function Hero() {
         initial={{ opacity: 0, scale: 1.02 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.1, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-        className="relative flex items-center justify-center min-h-[500px] lg:min-h-[700px] bg-stone-50"
+        className="relative flex items-center justify-center min-h-[320px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[700px] bg-stone-50"
       >
         <Image
           src={asset("/img/marta-hero.jpg")}

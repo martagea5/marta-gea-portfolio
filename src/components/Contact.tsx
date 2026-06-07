@@ -28,7 +28,7 @@ export default function Contact() {
   return (
     <section
       id="contacto"
-      className="py-20 md:py-32 lg:py-40 px-6 md:px-12 lg:px-20 bg-charcoal text-white"
+      className="py-14 md:py-32 lg:py-40 px-4 md:px-12 lg:px-20 bg-charcoal text-white"
     >
       <SectionHeader title="CONTACTO" light />
 

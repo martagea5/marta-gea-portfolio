@@ -31,7 +31,7 @@ export default function Nav() {
   return (
     <>
       <nav
-        className={`fixed top-0 inset-x-0 z-50 flex items-center justify-between h-[72px] px-6 md:px-12 lg:px-20 transition-all duration-300 ${
+        className={`fixed top-0 inset-x-0 z-50 flex items-center justify-between h-[60px] md:h-[72px] px-4 md:px-12 lg:px-20 transition-all duration-300 ${
           scrolled
             ? "bg-white/95 backdrop-blur-xl shadow-[0_1px_30px_rgba(0,0,0,0.06)]"
             : "bg-white/80 backdrop-blur-md"
