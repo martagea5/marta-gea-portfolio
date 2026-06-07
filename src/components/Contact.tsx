@@ -64,8 +64,28 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mb-14 flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="mb-14 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4"
         >
+          <a
+            href={asset("/portfolio-presentacion.pdf")}
+            download="Portfolio_MartaGea.pdf"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-white text-charcoal text-[11px] tracking-[0.25em] uppercase hover:bg-stone-100 transition-all duration-300 group"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              className="w-4 h-4 group-hover:translate-y-0.5 transition-transform duration-300"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"
+              />
+            </svg>
+            Descargar portfolio
+          </a>
           <a
             href={`${asset("/cv-marta-gea.pdf")}?v=2026`}
             download="CV_MartaGea.pdf"

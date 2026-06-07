@@ -65,31 +65,41 @@ export default function Hero() {
 
         </p>
 
-        <a
-
-          href="#proyectos"
-
-          onClick={(e) => {
-
-            e.preventDefault();
-
-            scrollToId("proyectos");
-
-          }}
-
-          className="inline-flex items-center gap-3 text-[11px] tracking-[0.25em] uppercase text-charcoal hover:text-stone-500 transition-colors duration-300 group"
-
-        >
-
-          PROYECTOS
-
-          <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
-
-            →
-
-          </span>
-
-        </a>
+        <div className="flex flex-col sm:flex-row items-center lg:items-start gap-5 sm:gap-8">
+          <a
+            href="#proyectos"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToId("proyectos");
+            }}
+            className="inline-flex items-center gap-3 text-[11px] tracking-[0.25em] uppercase text-charcoal hover:text-stone-500 transition-colors duration-300 group"
+          >
+            PROYECTOS
+            <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
+              →
+            </span>
+          </a>
+          <a
+            href={asset("/portfolio-presentacion.pdf")}
+            download="Portfolio_MartaGea.pdf"
+            className="inline-flex items-center gap-3 px-6 py-3 border border-stone-300 text-[11px] tracking-[0.25em] uppercase text-charcoal hover:bg-charcoal hover:text-white hover:border-charcoal transition-all duration-300 group"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              className="w-4 h-4 group-hover:translate-y-0.5 transition-transform duration-300"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"
+              />
+            </svg>
+            Portfolio PDF
+          </a>
+        </div>
 
       </motion.div>
 
