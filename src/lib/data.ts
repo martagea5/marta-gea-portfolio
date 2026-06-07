@@ -94,6 +94,7 @@ export const projects: Project[] = [
     categoryLabel: "PRODUCTO",
     thumbnail: "/img/projects/grifo-render.jpg",
     meta: "Diseño de producto · UPV",
+    description: "Grifo de diseño minimalista. Forma, función y materialidad en equilibrio.",
     images: [
       { src: "/img/projects/grifo-variantes.jpg" },
       { src: "/img/projects/grifo-render.jpg" },
@@ -117,6 +118,7 @@ export const projects: Project[] = [
     categoryLabel: "PRODUCTO",
     thumbnail: "/img/projects/altavoz-exploded.jpg",
     meta: "Diseño de producto · UPV",
+    description: "Altavoz portátil Bluetooth. Diseño desmontable y vista explosionada.",
     images: [{ src: "/img/projects/altavoz-exploded.jpg" }],
   },
   {
@@ -126,6 +128,7 @@ export const projects: Project[] = [
     categoryLabel: "PRODUCTO",
     thumbnail: "/img/projects/reloj-maserati-1.jpg",
     meta: "Diseño de producto · UPV",
+    description: "Reloj deportivo de lujo. Colaboración Maserati × Garmin.",
     images: [
       { src: "/img/projects/reloj-maserati-1.jpg" },
       { src: "/img/projects/reloj-maserati-2.jpg" },
@@ -139,6 +142,7 @@ export const projects: Project[] = [
     categoryLabel: "PRODUCTO",
     thumbnail: "/img/projects/trofeo-valencia.jpg",
     meta: "Trofeo conmemorativo · World Design Capital",
+    description: "Trofeo conmemorativo para la World Design Capital Valencia 2022.",
     images: [{ src: "/img/projects/trofeo-valencia.jpg" }],
   },
   {
@@ -148,6 +152,7 @@ export const projects: Project[] = [
     categoryLabel: "GRÁFICO",
     thumbnail: "/img/projects/metamorfosis.jpg",
     meta: "Diseño editorial · Franz Kafka",
+    description: "Diseño editorial para La Metamorfosis de Franz Kafka.",
     images: [{ src: "/img/projects/metamorfosis.jpg" }],
   },
   {
@@ -157,6 +162,7 @@ export const projects: Project[] = [
     categoryLabel: "GRÁFICO",
     thumbnail: "/img/projects/merchandising-upv.jpg",
     meta: "Diseño gráfico · Universitat Politècnica de València",
+    description: "Línea de merchandising para la Universitat Politècnica de València.",
     images: [{ src: "/img/projects/merchandising-upv.jpg" }],
   },
 ];
@@ -190,7 +196,7 @@ export interface TimelineEntry {
 export const experience: TimelineEntry[] = [
   {
     date: "May 2024 — Presente",
-    role: "Diseñadora Senior",
+    role: "Diseñadora",
     company: "Salamandra Interiorismo",
     meta: "Jornada completa · Bétera, Valencia",
     description:
