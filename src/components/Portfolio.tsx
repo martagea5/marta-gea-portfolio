@@ -12,14 +12,15 @@ export default function Portfolio() {
 
   const scrollToProject = (id: string) => {
     const needsReset = active !== "all";
-    setActive("all");
+    if (needsReset) setActive("all");
 
     window.setTimeout(() => {
       const el = document.getElementById(id);
       if (el) {
-        el.scrollIntoView({ behavior: "smooth", block: "start" });
+        const y = el.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
       }
-    }, needsReset ? 450 : 50);
+    }, needsReset ? 420 : 0);
   };
 
   return (

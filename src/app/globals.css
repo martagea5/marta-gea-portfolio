@@ -17,14 +17,6 @@
   --font-serif: var(--font-playfair);
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-[id] {
-  scroll-margin-top: 84px;
-}
-
 body {
   background: var(--color-white);
   color: var(--color-charcoal);
