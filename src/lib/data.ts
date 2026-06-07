@@ -71,10 +71,10 @@ export const projects: Project[] = [
     categoryLabel: "INTERIORISMO",
     thumbnail: "/img/projects/popedeli-1.jpg",
     description:
-      "Diseño de interiores del restaurante PoPe Deli en Valencia. Un delicatessen neoyorquino donde el pastrami es protagonista: atmósfera cálida y contemporánea que fusiona la estética deli clásica con detalles actuales en el corazón de la ciudad.",
+      "Diseño de interiores del restaurante POPE DELI en Valencia. Un delicatessen neoyorquino donde el pastrami es protagonista: atmósfera cálida y contemporánea que fusiona la estética deli clásica con detalles actuales en el corazón de la ciudad.",
     meta: "Interiorismo comercial · Valencia · Salamandra Interiorismo",
     images: [
-      { src: "/img/projects/popedeli-1.jpg", caption: "Fachada Pope Deli Valencia" },
+      { src: "/img/projects/popedeli-1.jpg", caption: "Fachada POPE DELI Valencia" },
       { src: "/img/projects/popedeli-2.jpg", caption: "Zona de barra alta" },
       { src: "/img/projects/popedeli-3.jpg", caption: "Sala principal" },
       { src: "/img/projects/popedeli-4.jpg", caption: "Galería de cuadros" },
