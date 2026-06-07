@@ -307,11 +307,11 @@ export default function CVPage() {
               <h2 className="cv__section-title">Perfil</h2>
               <p className="cv__about">
                 Ingeniera de Diseño Industrial con más de 2 años de experiencia en
-                interiorismo y diseño de producto. Especializada en proyectos
-                integrales que abarcan planimetría, modelado 3D, renders y dirección
-                creativa. Combinó rigor técnico y sensibilidad estética en cada
-                proyecto, siempre orientada al detalle y a la coherencia narrativa
-                del espacio.
+                interiorismo residencial y diseño de producto. Especializada en
+                proyectos integrales de viviendas: planimetría, distribución,
+                modelado 3D, renders y dirección creativa. Combina rigor técnico y
+                sensibilidad estética en cada proyecto, con especial atención al
+                detalle y a la coherencia del espacio.
               </p>
             </section>
 
@@ -324,13 +324,15 @@ export default function CVPage() {
                   <p className="cv__entry-role">Diseñadora</p>
                   <p className="cv__entry-company">Salamandra Interiorismo · Valencia</p>
                   <p className="cv__entry-desc">
-                    Diseño de interiores integral: planimetría, propuestas en AutoCAD y
-                    SketchUp, renders en D5 Render, infografías en InDesign. Participación
-                    en proyectos destacados como{" "}
+                    Desarrollo de proyectos de interiorismo residencial: viviendas
+                    unifamiliares, reformas integrales, distribución de espacios,
+                    selección de materiales y acompañamiento en obra. También
+                    participación en proyectos comerciales como{" "}
                     <strong>Casa Decor Madrid 2025</strong> y{" "}
-                    <strong>POPE DELI Valencia</strong>. Gestión de presupuestos,
-                    atención al cliente, identidad corporativa y mantenimiento web
-                    (HTML, WordPress, Elementor).
+                    <strong>POPE DELI Valencia</strong>. Planimetría en AutoCAD,
+                    modelado y renders en SketchUp y D5 Render, propuestas en
+                    InDesign, gestión de presupuestos, atención al cliente e
+                    identidad corporativa.
                   </p>
                 </div>
 
@@ -339,9 +341,9 @@ export default function CVPage() {
                   <p className="cv__entry-role">Diseñadora de Interiores</p>
                   <p className="cv__entry-company">Salamandra Interiorismo · Valencia</p>
                   <p className="cv__entry-desc">
-                    Prácticas: planimetrías, propuestas visuales, modelado y renders
-                    en AutoCAD y 3DS Max, apoyo en proyectos de interiorismo residencial
-                    y comercial.
+                    Prácticas en interiorismo residencial: planimetrías, propuestas
+                    visuales, modelado y renders en AutoCAD y 3DS Max, apoyo en
+                    reformas de vivienda y proyectos comerciales puntuales.
                   </p>
                 </div>
 
@@ -409,7 +411,7 @@ export default function CVPage() {
               {[
                 { name: "Español", level: "Nativo", pct: 100 },
                 { name: "Catalán", level: "Nativo", pct: 100 },
-                { name: "Inglés", level: "B2 Cambridge", pct: 75 },
+                { name: "Inglés", level: "B2 Level", pct: 75 },
                 { name: "Italiano", level: "A2 ACLES", pct: 35 },
               ].map((l) => (
                 <div key={l.name}>
@@ -454,7 +456,6 @@ export default function CVPage() {
             <section className="cv__section" style={{ marginBottom: 0 }}>
               <h2 className="cv__section-title">Certificaciones</h2>
               {[
-                "Inglés B2 — Cambridge",
                 "ArchViz 3D Surrealista — Domestika",
                 "Generative AI for Everyone — Coursera",
                 "Supervised Machine Learning — Coursera",

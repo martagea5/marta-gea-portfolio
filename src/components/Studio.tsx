@@ -91,11 +91,12 @@ export default function Studio() {
             <strong className="font-medium text-charcoal">
               Salamandra Interiorismo
             </strong>
-            , donde desarrollo proyectos integrales que abarcan desde la
-            planimetría y el diseño de distribución hasta la selección de
-            materiales, la creación de propuestas visuales y el acompañamiento en
-            obra. Mi enfoque combina rigor técnico con una mirada creativa,
-            siempre orientada a la coherencia y el cuidado del detalle.
+            , donde desarrollo principalmente proyectos residenciales — viviendas,
+            reformas integrales y distribución de espacios — además de proyectos
+            comerciales como Casa Decor 2025 y POPE DELI. Mi trabajo abarca
+            planimetría, selección de materiales, propuestas visuales y
+            acompañamiento en obra, siempre con rigor técnico y atención al
+            detalle.
           </p>
           <p className="text-[15px] font-light text-stone-500 leading-[1.9]">
             Formada en la{" "}

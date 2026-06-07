@@ -35,7 +35,7 @@ const items = [
   },
   {
     label: "IDIOMAS",
-    value: "Español · Catalán · Inglés · Italiano",
+    value: "Español · Catalán · Inglés (B2) · Italiano",
   },
 ];
 

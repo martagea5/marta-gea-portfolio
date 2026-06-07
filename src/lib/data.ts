@@ -201,7 +201,7 @@ export const experience: TimelineEntry[] = [
     company: "Salamandra Interiorismo",
     meta: "Jornada completa · Bétera, Valencia",
     description:
-      "Amplia experiencia en diseño, gestión de proyectos, atención al cliente y soporte administrativo. Planimetría y visitas de obra, propuestas creativas en InDesign, diseño gráfico y modelado 3D en SketchUp, diseño y mantenimiento web en HTML, WordPress y Elementor, identidad corporativa, atención al cliente, gestión de presupuestos y facturas, y negociación con proveedores.",
+      "Desarrollo de proyectos de interiorismo residencial: viviendas unifamiliares, reformas integrales, distribución de espacios y acompañamiento en obra. También participación en proyectos comerciales como Casa Decor Madrid 2025 y POPE DELI Valencia. Planimetría, renders, selección de materiales, atención al cliente, gestión de presupuestos e identidad corporativa.",
   },
   {
     date: "Sep 2023 — May 2024",
@@ -209,7 +209,7 @@ export const experience: TimelineEntry[] = [
     company: "Salamandra Interiorismo",
     meta: "Contrato de prácticas · Bétera, Valencia",
     description:
-      "Prácticas en diseño de interiores: elaboración de planimetrías, desarrollo de propuestas visuales, modelado y renders en AutoCAD y 3ds Max, y apoyo en proyectos de interiorismo.",
+      "Prácticas en interiorismo residencial: planimetrías, propuestas visuales, modelado y renders en AutoCAD y 3ds Max, apoyo en reformas de vivienda y proyectos comerciales puntuales.",
   },
   {
     date: "Jun 2023 — Sep 2023",
