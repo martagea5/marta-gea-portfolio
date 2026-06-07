@@ -56,6 +56,12 @@ export const projects: Project[] = [
       { src: "/img/projects/casa-decor-6.jpg" },
       { src: "/img/projects/casa-decor-7.jpg" },
       { src: "/img/projects/casa-decor-8.jpg" },
+      { src: "/img/projects/casa-decor-9.jpg" },
+      { src: "/img/projects/casa-decor-10.jpg" },
+      { src: "/img/projects/casa-decor-11.jpg" },
+      { src: "/img/projects/casa-decor-12.jpg" },
+      { src: "/img/projects/casa-decor-13.jpg" },
+      { src: "/img/projects/casa-decor-14.jpg" },
     ],
   },
   {
@@ -74,6 +80,11 @@ export const projects: Project[] = [
       { src: "/img/projects/popedeli-4.jpg" },
       { src: "/img/projects/popedeli-5.jpg" },
       { src: "/img/projects/popedeli-6.jpg" },
+      { src: "/img/projects/popedeli-7.jpg" },
+      { src: "/img/projects/popedeli-8.jpg" },
+      { src: "/img/projects/popedeli-9.jpg" },
+      { src: "/img/projects/popedeli-10.jpg" },
+      { src: "/img/projects/popedeli-11.jpg" },
     ],
   },
   {
@@ -148,17 +159,6 @@ export const projects: Project[] = [
     meta: "Diseño gráfico · Universitat Politècnica de València",
     images: [{ src: "/img/projects/merchandising-upv.jpg" }],
   },
-  {
-    id: "pigment",
-    title: "PIGMENT",
-    category: "grafico",
-    categoryLabel: "GRÁFICO",
-    thumbnail: "/img/projects/pigment.jpg",
-    meta: "Diseño gráfico · Cartelería y exposición",
-    description:
-      "Proyecto de diseño gráfico que añade color al espacio: cartelería de evento, identidad visual y aplicaciones para una exposición de producto.",
-    images: [{ src: "/img/projects/pigment.jpg" }],
-  },
 ];
 
 export interface Skill {
@@ -228,7 +228,7 @@ export const education: TimelineEntry[] = [
     company: "Universitat Politècnica de València (UPV)",
   },
   {
-    role: "ArchViz de Interiores: Diseños 3D con Blender",
+    role: "ArchViz de Interiores: Diseños 3D Surrealistas con Blender",
     company: "Domestika",
   },
 ];

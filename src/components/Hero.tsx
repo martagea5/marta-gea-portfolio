@@ -36,8 +36,7 @@ export default function Hero() {
             e.preventDefault();
             const el = document.querySelector("#proyectos");
             if (el) {
-              const y = el.getBoundingClientRect().top + window.scrollY - 72;
-              window.scrollTo({ top: y, behavior: "smooth" });
+              el.scrollIntoView({ behavior: "smooth", block: "start" });
             }
           }}
           className="inline-block text-[11px] tracking-[0.2em] uppercase px-10 py-4 border border-charcoal text-charcoal hover:bg-charcoal hover:text-white transition-all duration-400"

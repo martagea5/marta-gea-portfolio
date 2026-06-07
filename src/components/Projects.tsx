@@ -17,9 +17,14 @@ const filters: { value: Filter; label: string }[] = [
 interface Props {
   active: Filter;
   onFilterChange: (filter: Filter) => void;
+  onProjectClick: (id: string) => void;
 }
 
-export default function Projects({ active, onFilterChange }: Props) {
+export default function Projects({
+  active,
+  onFilterChange,
+  onProjectClick,
+}: Props) {
   const filtered =
     active === "all"
       ? projects
@@ -78,17 +83,12 @@ export default function Projects({ active, onFilterChange }: Props) {
                 href={`#${project.id}`}
                 onClick={(e) => {
                   e.preventDefault();
-                  const el = document.getElementById(project.id);
-                  if (el) {
-                    const y =
-                      el.getBoundingClientRect().top + window.scrollY - 72;
-                    window.scrollTo({ top: y, behavior: "smooth" });
-                  }
+                  onProjectClick(project.id);
                 }}
                 className="block relative overflow-hidden"
               >
                 <div
-                  className={`relative overflow-hidden ${
+                  className={`relative overflow-hidden bg-stone-200 ${
                     project.featured
                       ? "aspect-[21/9]"
                       : "aspect-[16/10]"
@@ -98,7 +98,7 @@ export default function Projects({ active, onFilterChange }: Props) {
                     src={asset(project.thumbnail)}
                     alt={project.title}
                     fill
-                    className="object-contain bg-stone-50 transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+                    className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>

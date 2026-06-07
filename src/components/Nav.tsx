@@ -23,8 +23,7 @@ export default function Nav() {
     setOpen(false);
     const el = document.querySelector(href);
     if (el) {
-      const y = el.getBoundingClientRect().top + window.scrollY - 72;
-      window.scrollTo({ top: y, behavior: "smooth" });
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
