@@ -8,7 +8,7 @@ const C = {
   ink:      "#1A1917",
   charcoal: "#2C2A27",
   s500:     "#6B6763",
-  s400:     "#9B8E7E",   /* ← "Almudever" color */
+  s400:     "#9B8E7E",
   s300:     "#B8B5B0",
   s200:     "#D4CCC2",
   s100:     "#EEECE7",
@@ -25,12 +25,10 @@ export default function CVPage() {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap');
 
-        /* ─── Reset scoped ─────────────────────────────── */
         .cv-page *, .cv-page *::before, .cv-page *::after {
           box-sizing: border-box; margin: 0; padding: 0;
         }
 
-        /* ─── Page wrapper ─────────────────────────────── */
         .cv-page {
           font-family: 'Inter', sans-serif;
           background: ${C.s50};
@@ -42,17 +40,16 @@ export default function CVPage() {
           -webkit-text-size-adjust: 100%;
         }
 
-        /* ─── Action bar ───────────────────────────────── */
+        /* ── Action bar ── */
         .cv-actions {
           width: 100%;
-          max-width: 800px;
+          max-width: 820px;
           display: flex;
           flex-wrap: wrap;
           justify-content: flex-end;
           gap: 8px;
           margin-bottom: 14px;
         }
-
         .btn {
           font-family: 'Inter', sans-serif;
           font-size: 9px;
@@ -71,76 +68,72 @@ export default function CVPage() {
           transition: background 0.25s, color 0.25s;
           white-space: nowrap;
         }
-        .btn:hover            { background: ${C.charcoal}; color: ${C.white}; }
-        .btn--solid           { background: ${C.charcoal}; color: ${C.white}; }
-        .btn--solid:hover     { background: ${C.ink}; }
+        .btn:hover { background: ${C.charcoal}; color: ${C.white}; }
+        .btn--solid { background: ${C.charcoal}; color: ${C.white}; }
+        .btn--solid:hover { background: ${C.ink}; }
 
-        /* ─── CV sheet ─────────────────────────────────── */
+        /* ── CV sheet ── */
         .cv {
           width: 100%;
-          max-width: 800px;
+          max-width: 820px;
           background: ${C.white};
           color: ${C.charcoal};
-          padding: clamp(24px, 5vw, 44px) clamp(22px, 5vw, 48px);
+          padding: clamp(28px, 5vw, 48px) clamp(24px, 5vw, 52px);
           box-shadow: 0 6px 40px rgba(0,0,0,0.07);
         }
 
-        /* ─── Header ───────────────────────────────────── */
+        /* ── Header ── */
         .cv__header {
           display: grid;
           grid-template-columns: 1fr auto;
           gap: 16px 32px;
           align-items: end;
-          padding-bottom: 16px;
+          padding-bottom: 18px;
           border-bottom: 1.5px solid ${C.charcoal};
-          margin-bottom: 20px;
+          margin-bottom: 24px;
         }
-
         .cv__name {
           font-family: 'Playfair Display', serif;
-          font-size: clamp(26px, 5.5vw, 36px);
+          font-size: clamp(28px, 5.5vw, 40px);
           font-weight: 400;
           line-height: 1.05;
           letter-spacing: 0.01em;
           color: ${C.ink};
         }
-
         .cv__name em {
           font-style: italic;
-          color: ${C.s400};   /* ← el color de la imagen */
+          color: ${C.s400};
         }
-
         .cv__title {
-          margin-top: 7px;
+          margin-top: 8px;
           font-size: 8.5px;
-          letter-spacing: 0.35em;
+          letter-spacing: 0.38em;
           text-transform: uppercase;
           color: ${C.s400};
         }
-
         .cv__contact {
           font-style: normal;
           text-align: right;
           font-size: 9.5px;
           font-weight: 300;
           color: ${C.s500};
-          line-height: 1.85;
+          line-height: 1.9;
         }
         .cv__contact a { color: ${C.s500}; text-decoration: none; }
         .cv__contact a:hover { color: ${C.ink}; }
 
-        /* ─── Body 2-col ───────────────────────────────── */
+        /* ── Body 2-col ── */
         .cv__body {
           display: grid;
-          grid-template-columns: 1fr 190px;
-          gap: 28px;
+          grid-template-columns: 1fr 195px;
+          gap: 32px;
           align-items: start;
         }
 
-        /* ─── Section label ────────────────────────────── */
+        /* ── Section label ── */
         .cv__label {
           font-size: 7.5px;
-          letter-spacing: 0.42em;
+          letter-spacing: 0.44em;
           text-transform: uppercase;
           color: ${C.s300};
           margin-bottom: 9px;
@@ -148,33 +141,49 @@ export default function CVPage() {
           border-bottom: 1px solid ${C.s100};
         }
 
-        /* ─── Profile ──────────────────────────────────── */
+        /* ── Sections spacing ── */
+        .cv__section { margin-bottom: 22px; }
+        .cv__section:last-child { margin-bottom: 0; }
+
+        /* ── Profile ── */
         .cv__profile {
           font-size: 10px;
           font-weight: 300;
-          line-height: 1.75;
+          line-height: 1.8;
           color: ${C.s500};
-          margin-bottom: 18px;
         }
 
-        /* ─── Experience ───────────────────────────────── */
-        .cv__jobs { display: flex; flex-direction: column; gap: 11px; }
+        /* ── Skills pills (blandas) ── */
+        .cv__skills {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 5px;
+          margin-top: 10px;
+        }
+        .cv__skill-pill {
+          font-size: 8px;
+          font-weight: 300;
+          color: ${C.charcoal};
+          border: 1px solid ${C.s200};
+          padding: 3px 9px;
+          letter-spacing: 0.03em;
+        }
 
+        /* ── Experience ── */
+        .cv__jobs { display: flex; flex-direction: column; gap: 14px; }
         .cv__job-header {
           display: flex;
           justify-content: space-between;
           align-items: baseline;
           gap: 8px;
-          margin-bottom: 1px;
+          margin-bottom: 2px;
         }
-
         .cv__job-role {
           font-size: 10.5px;
           font-weight: 500;
           color: ${C.ink};
           letter-spacing: 0.01em;
         }
-
         .cv__job-date {
           font-size: 7.5px;
           letter-spacing: 0.14em;
@@ -183,24 +192,22 @@ export default function CVPage() {
           white-space: nowrap;
           flex-shrink: 0;
         }
-
         .cv__job-company {
           font-size: 9px;
           font-weight: 400;
           color: ${C.s400};
-          margin-bottom: 3px;
+          margin-bottom: 4px;
           letter-spacing: 0.02em;
         }
-
         .cv__job-desc {
           font-size: 9px;
           font-weight: 300;
           color: ${C.s500};
-          line-height: 1.6;
+          line-height: 1.65;
         }
 
-        /* ─── Sidebar ──────────────────────────────────── */
-        .cv__aside { display: flex; flex-direction: column; gap: 14px; }
+        /* ── Sidebar ── */
+        .cv__aside { display: flex; flex-direction: column; gap: 16px; }
 
         /* Idiomas */
         .cv__lang-row {
@@ -213,14 +220,10 @@ export default function CVPage() {
         }
         .cv__lang-row span:last-child { color: ${C.s300}; font-size: 8px; }
 
-        /* Herramientas — pills */
-        .cv__tags {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 4px;
-        }
+        /* Herramientas */
+        .cv__tags { display: flex; flex-wrap: wrap; gap: 4px; }
         .cv__tag {
-          font-size: 8px;
+          font-size: 7.5px;
           font-weight: 300;
           color: ${C.s500};
           background: ${C.s50};
@@ -230,7 +233,7 @@ export default function CVPage() {
         }
 
         /* Formación */
-        .cv__edu-item { margin-bottom: 7px; }
+        .cv__edu-item { margin-bottom: 8px; }
         .cv__edu-role {
           font-size: 8.5px;
           font-weight: 500;
@@ -248,33 +251,34 @@ export default function CVPage() {
           font-size: 8px;
           font-weight: 300;
           color: ${C.s500};
-          line-height: 1.6;
+          line-height: 1.7;
+          padding-bottom: 4px;
+          border-bottom: 1px solid ${C.s100};
+          margin-bottom: 4px;
         }
+        .cv__cert:last-child { border-bottom: none; margin-bottom: 0; }
 
-        /* Portfolio link */
+        /* Portfolio */
         .cv__portfolio-link {
           font-size: 8px;
-          letter-spacing: 0.1em;
+          letter-spacing: 0.08em;
           color: ${C.s400};
           text-decoration: none;
           word-break: break-all;
+          line-height: 1.6;
         }
         .cv__portfolio-link:hover { color: ${C.ink}; }
 
-        /* ─── Mobile ────────────────────────────────────── */
-        @media (max-width: 600px) {
-          .cv__header {
-            grid-template-columns: 1fr;
-          }
+        /* ── Mobile ── */
+        @media (max-width: 620px) {
+          .cv__header { grid-template-columns: 1fr; }
           .cv__contact { text-align: left; }
-          .cv__body {
-            grid-template-columns: 1fr;
-          }
+          .cv__body { grid-template-columns: 1fr; }
           .cv-actions { flex-direction: column; }
           .btn { width: 100%; justify-content: center; }
         }
 
-        /* ─── Print / PDF ──────────────────────────────── */
+        /* ── Print / PDF ── */
         @media print {
           .cv-page { background: ${C.white}; padding: 0; display: block; }
           .cv-actions { display: none !important; }
@@ -284,10 +288,9 @@ export default function CVPage() {
             width: 100%;
             padding: 0;
           }
-          .cv__body   { grid-template-columns: 1fr 170px; gap: 20px; }
-          .cv__name   { font-size: 28px; }
-          .cv__profile{ font-size: 9px; }
-          .cv__job-desc { font-size: 8.5px; }
+          .cv__body { grid-template-columns: 1fr 175px; gap: 24px; }
+          .cv__name { font-size: 32px; }
+          .cv__profile, .cv__job-desc { font-size: 8.5px; }
           * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
         }
 
@@ -332,6 +335,8 @@ export default function CVPage() {
             </a>
             <br />
             {cvData.contact.location}
+            <br />
+            {cvData.contact.dob}
           </address>
         </header>
 
@@ -340,24 +345,36 @@ export default function CVPage() {
 
           {/* ── Main column ── */}
           <div>
-            <p className="cv__profile">{cvData.profile}</p>
+            {/* Perfil */}
+            <div className="cv__section">
+              <p className="cv__label">Sobre mí</p>
+              <p className="cv__profile">{cvData.profile}</p>
+              <div className="cv__skills">
+                {cvData.skills.map((s) => (
+                  <span key={s} className="cv__skill-pill">{s}</span>
+                ))}
+              </div>
+            </div>
 
-            <p className="cv__label">Experiencia</p>
-            <div className="cv__jobs">
-              {cvData.experience.map((job) => (
-                <div key={`${job.date}-${job.role}`}>
-                  <div className="cv__job-header">
-                    <span className="cv__job-role">{job.role}</span>
-                    {job.date && (
-                      <span className="cv__job-date">{job.date}</span>
+            {/* Experiencia */}
+            <div className="cv__section">
+              <p className="cv__label">Experiencia</p>
+              <div className="cv__jobs">
+                {cvData.experience.map((job) => (
+                  <div key={`${job.date}-${job.role}`}>
+                    <div className="cv__job-header">
+                      <span className="cv__job-role">{job.role}</span>
+                      {job.date && (
+                        <span className="cv__job-date">{job.date}</span>
+                      )}
+                    </div>
+                    <p className="cv__job-company">{job.company}</p>
+                    {job.description && (
+                      <p className="cv__job-desc">{job.description}</p>
                     )}
                   </div>
-                  <p className="cv__job-company">{job.company}</p>
-                  {job.description && (
-                    <p className="cv__job-desc">{job.description}</p>
-                  )}
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
 
@@ -394,7 +411,7 @@ export default function CVPage() {
             </div>
 
             <div>
-              <p className="cv__label">Certificaciones</p>
+              <p className="cv__label">Títulos y certificaciones</p>
               {cvData.certifications.map((cert) => (
                 <p key={cert} className="cv__cert">{cert}</p>
               ))}
@@ -408,7 +425,7 @@ export default function CVPage() {
                 rel="noopener noreferrer"
                 className="cv__portfolio-link"
               >
-                martagea5.github.io/<br />marta-gea-portfolio
+                {cvData.portfolioUrl.replace("https://", "")}
               </a>
             </div>
 
