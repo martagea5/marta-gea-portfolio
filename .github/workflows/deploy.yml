@@ -29,6 +29,8 @@ jobs:
         env:
           GITHUB_PAGES: "true"
 
+      - run: touch out/.nojekyll
+
       - uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
