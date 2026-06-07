@@ -18,6 +18,7 @@ interface Props {
   prevProject: NavProject | null;
   nextProject: NavProject | null;
   onNavigate: (id: string) => void;
+  onBack: () => void;
 }
 
 function getRowCols(totalImages: number, index: number): string {
@@ -45,6 +46,7 @@ export default function ProjectDetail({
   prevProject,
   nextProject,
   onNavigate,
+  onBack,
 }: Props) {
   const [lightbox, setLightbox] = useState<{
     src: string;
@@ -67,7 +69,7 @@ export default function ProjectDetail({
   };
 
   const scrollToProjects = () => {
-    scrollToId("proyectos");
+    onBack();
   };
 
   return (

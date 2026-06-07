@@ -1,39 +1,47 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Projects from "./Projects";
 import ProjectDetail from "./ProjectDetail";
 import { projects, type ProjectCategory } from "@/lib/data";
-import { scrollToIdWhenReady } from "@/lib/scroll";
+import { scrollToId, scrollToIdWhenReady } from "@/lib/scroll";
 
 export type Filter = "all" | ProjectCategory;
 
 export default function Portfolio() {
   const [active, setActive] = useState<Filter>("all");
+  const [selectedId, setSelectedId] = useState<string | null>(null);
 
-  const scrollToProject = useCallback(
-    (id: string) => {
-      const needsReset = active !== "all";
-      if (needsReset) setActive("all");
+  const selectedProject = selectedId
+    ? projects.find((p) => p.id === selectedId) ?? null
+    : null;
+  const selectedIndex = selectedProject ? projects.indexOf(selectedProject) : -1;
 
-      const delay = needsReset ? 450 : 0;
-      window.setTimeout(() => {
-        scrollToIdWhenReady(id);
-      }, delay);
-    },
-    [active]
-  );
+  const openProject = useCallback((id: string) => {
+    setActive("all");
+    setSelectedId(id);
+    window.setTimeout(() => scrollToIdWhenReady("project-detail-view"), 80);
+  }, []);
+
+  const closeProject = useCallback(() => {
+    setSelectedId(null);
+    window.setTimeout(() => scrollToId("proyectos"), 80);
+  }, []);
+
+  const navigateProject = useCallback((id: string) => {
+    setSelectedId(id);
+    window.setTimeout(() => scrollToIdWhenReady("project-detail-view"), 80);
+  }, []);
 
   useEffect(() => {
     const hash = window.location.hash.slice(1);
     if (!hash) return;
-
-    const knownIds = new Set(["proyectos", "studio", "contacto", "hero", ...projects.map((p) => p.id)]);
-    if (!knownIds.has(hash)) return;
-
-    window.setTimeout(() => {
-      scrollToIdWhenReady(hash, { behavior: "auto", maxAttempts: 30 });
-    }, 120);
+    const project = projects.find((p) => p.id === hash);
+    if (project) {
+      setSelectedId(hash);
+      window.setTimeout(() => scrollToIdWhenReady("project-detail-view", { behavior: "auto" }), 200);
+    }
   }, []);
 
   return (
@@ -41,25 +49,38 @@ export default function Portfolio() {
       <Projects
         active={active}
         onFilterChange={setActive}
-        onProjectClick={scrollToProject}
+        onProjectClick={openProject}
+        selectedId={selectedId}
       />
-      {projects.map((p, i) => (
-        <ProjectDetail
-          key={p.id}
-          project={p}
-          prevProject={
-            i > 0
-              ? { id: projects[i - 1].id, title: projects[i - 1].title }
-              : null
-          }
-          nextProject={
-            i < projects.length - 1
-              ? { id: projects[i + 1].id, title: projects[i + 1].title }
-              : null
-          }
-          onNavigate={scrollToProject}
-        />
-      ))}
+
+      <AnimatePresence>
+        {selectedProject && (
+          <motion.div
+            id="project-detail-view"
+            key={selectedProject.id}
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+            transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+          >
+            <ProjectDetail
+              project={selectedProject}
+              prevProject={
+                selectedIndex > 0
+                  ? { id: projects[selectedIndex - 1].id, title: projects[selectedIndex - 1].title }
+                  : null
+              }
+              nextProject={
+                selectedIndex < projects.length - 1
+                  ? { id: projects[selectedIndex + 1].id, title: projects[selectedIndex + 1].title }
+                  : null
+              }
+              onNavigate={navigateProject}
+              onBack={closeProject}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

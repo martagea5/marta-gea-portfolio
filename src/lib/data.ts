@@ -75,7 +75,6 @@ export const projects: Project[] = [
     meta: "Interiorismo comercial · Valencia · Salamandra Interiorismo",
     images: [
       { src: "/img/projects/popedeli-1.jpg", caption: "Fachada POPE DELI Valencia" },
-      { src: "/img/projects/popedeli-12.jpg", caption: "Sala con mesa redonda" },
       { src: "/img/projects/popedeli-2.jpg", caption: "Zona de barra alta" },
       { src: "/img/projects/popedeli-3.jpg", caption: "Sala principal" },
       { src: "/img/projects/popedeli-4.jpg", caption: "Galería de cuadros" },
@@ -86,6 +85,7 @@ export const projects: Project[] = [
       { src: "/img/projects/popedeli-9.jpg", caption: "Baño — azulejos verdes" },
       { src: "/img/projects/popedeli-10.jpg", caption: "Detalle lavabo" },
       { src: "/img/projects/popedeli-11.jpg", caption: "Estantería de barra" },
+      { src: "/img/projects/popedeli-12.jpg", caption: "Sala con mesa redonda" },
     ],
   },
   {
