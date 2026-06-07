@@ -30,8 +30,22 @@ export default function Portfolio() {
         onFilterChange={setActive}
         onProjectClick={scrollToProject}
       />
-      {projects.map((p) => (
-        <ProjectDetail key={p.id} project={p} />
+      {projects.map((p, i) => (
+        <ProjectDetail
+          key={p.id}
+          project={p}
+          prevProject={
+            i > 0
+              ? { id: projects[i - 1].id, title: projects[i - 1].title }
+              : null
+          }
+          nextProject={
+            i < projects.length - 1
+              ? { id: projects[i + 1].id, title: projects[i + 1].title }
+              : null
+          }
+          onNavigate={scrollToProject}
+        />
       ))}
     </>
   );
