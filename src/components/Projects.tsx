@@ -1,12 +1,10 @@
 "use client";
 
-import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import SectionHeader from "./SectionHeader";
-import { projects, type ProjectCategory } from "@/lib/data";
-
-type Filter = "all" | ProjectCategory;
+import { projects } from "@/lib/data";
+import type { Filter } from "./Portfolio";
 
 const filters: { value: Filter; label: string }[] = [
   { value: "all", label: "Todo" },
@@ -15,9 +13,12 @@ const filters: { value: Filter; label: string }[] = [
   { value: "grafico", label: "Gráfico" },
 ];
 
-export default function Projects() {
-  const [active, setActive] = useState<Filter>("all");
+interface Props {
+  active: Filter;
+  onFilterChange: (filter: Filter) => void;
+}
 
+export default function Projects({ active, onFilterChange }: Props) {
   const filtered =
     active === "all"
       ? projects
@@ -35,7 +36,7 @@ export default function Projects() {
         {filters.map((f) => (
           <button
             key={f.value}
-            onClick={() => setActive(f.value)}
+            onClick={() => onFilterChange(f.value)}
             className={`text-[11px] tracking-[0.15em] pb-2 relative transition-colors ${
               active === f.value
                 ? "text-charcoal"
@@ -96,7 +97,7 @@ export default function Projects() {
                     src={project.thumbnail}
                     alt={project.title}
                     fill
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                    className="object-contain bg-stone-50 transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>

@@ -50,15 +50,16 @@ export default function Hero() {
         initial={{ opacity: 0, scale: 1.02 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.1, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-        className="relative h-full min-h-[500px] lg:min-h-[600px] overflow-hidden"
+        className="relative flex items-center justify-center min-h-[500px] lg:min-h-[700px] bg-stone-50"
       >
         <Image
           src="/img/marta-hero.jpg"
           alt="Marta Gea"
-          fill
+          width={768}
+          height={1024}
           priority
-          className="object-cover object-top"
-          sizes="(max-width: 1024px) 100vw, 50vw"
+          className="max-h-[80vh] w-auto object-contain"
+          sizes="(max-width: 1024px) 90vw, 45vw"
         />
       </motion.div>
     </section>

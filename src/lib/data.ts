@@ -14,14 +14,14 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: "edifica",
-    title: "OFICINA EDIFICA",
+    id: "oficina",
+    title: "PROYECTO OFICINA",
     category: "interiorismo",
     categoryLabel: "INTERIORISMO",
     thumbnail: "/img/projects/edifica-infografia-1.jpg",
     description:
-      "Proyecto integral de diseño de oficina corporativa para Edifica. Desde el análisis del estado actual hasta la propuesta final, abarcando distribución espacial, materialidad, selección de mobiliario e infografías. Un espacio que traduce la identidad de la empresa en arquitectura interior: sobrio, funcional y con una materialidad cuidada que combina arcilla, madera y latón.",
-    meta: "Salamandra Interiorismo · Valencia, 2024",
+      "Proyecto integral de diseño de oficina corporativa. Desde el análisis del estado actual hasta la propuesta final, abarcando distribución espacial, materialidad, selección de mobiliario e infografías. Un espacio sobrio y funcional con una materialidad cuidada que combina arcilla, madera y latón.",
+    meta: "Diseño de interiores · Valencia, 2024",
     images: [
       { src: "/img/projects/edifica-planta-actual.jpg", caption: "Estado actual" },
       { src: "/img/projects/edifica-planta-propuesta.jpg", caption: "Planta propuesta" },
