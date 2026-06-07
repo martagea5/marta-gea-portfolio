@@ -152,15 +152,10 @@ export interface TimelineEntry {
 export const experience: TimelineEntry[] = [
   {
     date: "2024 — Presente",
-    role: "Diseñadora",
+    role: "Diseñadora Senior",
     company: "Salamandra Interiorismo · Valencia",
     description:
       "Planimetría, propuestas de diseño, modelado 3D, identidad corporativa, diseño web y gestión integral de proyectos de interiorismo.",
-  },
-  {
-    date: "2023 — 2024",
-    role: "Diseñadora de Interiores",
-    company: "Salamandra Interiorismo · Valencia",
   },
   {
     date: "2023",
