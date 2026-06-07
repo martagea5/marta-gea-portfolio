@@ -12,7 +12,7 @@ export interface CVEntry {
 
 export const cvData = {
   name: "Marta Gea",
-  surname: "Almudever",
+  surname: "Almudéver",
   title: "Diseñadora de Interiores & Producto",
   contact: {
     email: "martagea5@hotmail.es",

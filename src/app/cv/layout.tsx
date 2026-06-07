@@ -3,7 +3,7 @@ import type { Metadata, Viewport } from "next";
 export const metadata: Metadata = {
   title: "Marta Gea — CV",
   description:
-    "Currículum Vitae de Marta Gea Almudever. Diseñadora de Interiores y Producto.",
+    "Currículum Vitae de Marta Gea Almudéver. Diseñadora de Interiores y Producto.",
   robots: { index: false },
 };
 

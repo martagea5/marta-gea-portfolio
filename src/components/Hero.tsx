@@ -8,10 +8,6 @@ import Image from "next/image";
 
 import { asset } from "@/lib/assets";
 
-import { scrollToId } from "@/lib/scroll";
-
-
-
 export default function Hero() {
 
 
@@ -51,7 +47,7 @@ export default function Hero() {
 
           <br />
 
-          <em className="text-stone-400">Almudever</em>
+          <em className="text-stone-400">Almudéver</em>
 
         </h1>
 
@@ -65,21 +61,7 @@ export default function Hero() {
 
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center lg:items-start gap-5 sm:gap-8">
-          <a
-            href="#proyectos"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToId("proyectos");
-            }}
-            className="inline-flex items-center gap-3 text-[11px] tracking-[0.25em] uppercase text-charcoal hover:text-stone-500 transition-colors duration-300 group"
-          >
-            PROYECTOS
-            <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
-              →
-            </span>
-          </a>
-          <a
+        <a
             href={asset("/portfolio-presentacion.pdf")}
             download="Portfolio_MartaGea.pdf"
             className="inline-flex items-center gap-3 px-6 py-3 border border-stone-300 text-[11px] tracking-[0.25em] uppercase text-charcoal hover:bg-charcoal hover:text-white hover:border-charcoal transition-all duration-300 group"
@@ -99,7 +81,6 @@ export default function Hero() {
             </svg>
             Portfolio PDF
           </a>
-        </div>
 
       </motion.div>
 

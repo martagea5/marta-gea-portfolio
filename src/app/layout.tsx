@@ -22,7 +22,7 @@ const siteUrl =
 
 const title = "Marta Gea — Diseño de Interiores & Producto";
 const description =
-  "Portfolio de Marta Gea Almudever. Diseño de interiores, producto y visualización 3D. Valencia.";
+  "Portfolio de Marta Gea Almudéver. Diseño de interiores, producto y visualización 3D. Valencia.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
         url: `${basePath}/img/marta-hero.jpg`,
         width: 768,
         height: 1024,
-        alt: "Marta Gea Almudever — Diseño de interiores y producto",
+        alt: "Marta Gea Almudéver — Diseño de interiores y producto",
       },
     ],
     locale: "es_ES",
