@@ -1,7 +1,6 @@
 export interface CVLanguage {
   name: string;
   level: string;
-  pct: number;
 }
 
 export interface CVEntry {
@@ -25,71 +24,68 @@ export const cvData = {
   },
   portfolioUrl: "https://martagea5.github.io/marta-gea-portfolio/",
   profile:
-    "Ingeniera de Diseño Industrial con más de 2 años de experiencia en interiorismo residencial y diseño de producto. Especializada en proyectos integrales de viviendas: planimetría, distribución, modelado 3D, renders y dirección creativa. Combina rigor técnico y sensibilidad estética en cada proyecto, con especial atención al detalle y a la coherencia del espacio.",
+    "Ingeniera de Diseño Industrial especializada en interiorismo residencial y diseño de producto. Desarrollo proyectos integrales de vivienda — planimetría, distribución, modelado 3D y renders — con rigor técnico y sensibilidad estética.",
   experience: [
     {
-      date: "Mayo 2024 — Presente",
+      date: "May 2024 — Presente",
       role: "Diseñadora",
-      company: "Salamandra Interiorismo · Valencia",
+      company: "Salamandra Interiorismo",
       description:
-        "Desarrollo de proyectos de interiorismo residencial: viviendas unifamiliares, reformas integrales, distribución de espacios, selección de materiales y acompañamiento en obra. También participación en proyectos comerciales como Casa Decor Madrid 2025 y POPE DELI Valencia. Planimetría en AutoCAD, modelado y renders en SketchUp y D5 Render, propuestas en InDesign, gestión de presupuestos, atención al cliente e identidad corporativa.",
+        "Interiorismo residencial: viviendas, reformas integrales y acompañamiento en obra. Proyectos comerciales: Casa Decor Madrid 2025 y POPE DELI Valencia. AutoCAD, SketchUp, D5 Render, InDesign, gestión de presupuestos y atención al cliente.",
     },
     {
-      date: "Septiembre 2023 — Mayo 2024",
+      date: "Sep 2023 — May 2024",
       role: "Diseñadora de Interiores",
-      company: "Salamandra Interiorismo · Valencia",
+      company: "Salamandra Interiorismo",
       description:
-        "Prácticas en interiorismo residencial: planimetrías, propuestas visuales, modelado y renders en AutoCAD y 3DS Max, apoyo en reformas de vivienda y proyectos comerciales puntuales.",
+        "Prácticas en interiorismo residencial: planimetrías, renders en AutoCAD y 3DS Max, apoyo en reformas de vivienda.",
     },
     {
-      date: "Junio — Septiembre 2023",
+      date: "Jun — Sep 2023",
       role: "Ingeniera de Diseño Junior",
-      company: "Fab 4.0 Hose S.L. · Valencia",
+      company: "Fab 4.0 Hose S.L.",
       description:
-        "Automatización de procesos en Excel con macros, revisión de planos en SolidWorks, controles de calidad y generación de fichas técnicas.",
+        "Automatización en Excel, revisión de planos en SolidWorks y fichas técnicas.",
     },
     {
-      date: "Julio 2018",
+      date: "Jul 2018",
       role: "Becaria — Urbanismo",
-      company: "Ajuntament d'Alcàsser · Valencia",
-      description:
-        "Bocetos de fachadas protegidas, revisión de daños estructurales y propuestas de solución.",
+      company: "Ajuntament d'Alcàsser",
+      description: "Bocetos de fachadas protegidas y propuestas de solución.",
     },
   ] satisfies CVEntry[],
   education: [
     {
-      role: "Ingeniería de Diseño Industrial y Desarrollo del Producto",
+      role: "Ingeniería de Diseño Industrial",
       company: "Universitat Politècnica de València (UPV)",
     },
     {
-      role: "Bachillerato en Ciencias Tecnológicas",
+      role: "Bachillerato Ciencias Tecnológicas",
       company: "IES Alcàsser",
     },
   ] satisfies CVEntry[],
   languages: [
-    { name: "Español", level: "Nativo", pct: 100 },
-    { name: "Catalán", level: "Nativo", pct: 100 },
-    { name: "Inglés", level: "B2 Level", pct: 75 },
-    { name: "Italiano", level: "A2 ACLES", pct: 35 },
+    { name: "Español", level: "Nativo" },
+    { name: "Catalán", level: "Nativo" },
+    { name: "Inglés", level: "B2 Level" },
+    { name: "Italiano", level: "A2" },
   ] satisfies CVLanguage[],
   tools: [
     "AutoCAD",
     "SketchUp",
     "D5 Render",
     "3DS Max",
-    "V-Ray",
     "Rhino",
     "Blender",
     "Photoshop",
     "Illustrator",
     "InDesign",
     "SolidWorks",
-    "WordPress / HTML",
   ],
   certifications: [
-    "ArchViz 3D Surrealista — Domestika",
-    "Generative AI for Everyone — Coursera",
-    "Supervised Machine Learning — Coursera",
-    "Permiso de conducir B",
+    "ArchViz 3D — Domestika",
+    "Generative AI — Coursera",
+    "Machine Learning — Coursera",
+    "Permiso B",
   ],
 };

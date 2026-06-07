@@ -67,7 +67,7 @@ export default function Contact() {
           className="mb-14 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <a
-            href={asset("/cv-marta-gea.pdf")}
+            href={`${asset("/cv-marta-gea.pdf")}?v=2026`}
             download="CV_MartaGea.pdf"
             className="inline-flex items-center gap-3 px-8 py-4 border border-white/30 text-white text-[11px] tracking-[0.25em] uppercase hover:bg-white hover:text-charcoal transition-all duration-300 group"
           >
