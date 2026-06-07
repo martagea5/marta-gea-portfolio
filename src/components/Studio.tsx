@@ -118,7 +118,7 @@ export default function Studio() {
           <h3 className="text-[10px] tracking-[0.35em] text-stone-400 mb-8">
             HERRAMIENTAS
           </h3>
-          <div className="flex flex-col gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-4">
             {skills.map((s) => (
               <SkillBar key={s.name} name={s.name} level={s.level} />
             ))}

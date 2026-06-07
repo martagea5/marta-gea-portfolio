@@ -135,16 +135,16 @@ export interface Skill {
 }
 
 export const skills: Skill[] = [
-  { name: "AutoCAD", level: 95 },
-  { name: "Rhinoceros 3D", level: 90 },
-  { name: "SketchUp", level: 90 },
-  { name: "SolidWorks", level: 90 },
-  { name: "3ds Max", level: 85 },
-  { name: "KeyShot", level: 90 },
-  { name: "Blender", level: 75 },
+  { name: "AutoCAD", level: 90 },
+  { name: "D5 Render", level: 85 },
+  { name: "SketchUp", level: 75 },
+  { name: "Photoshop", level: 90 },
+  { name: "3DS Max", level: 70 },
   { name: "Illustrator", level: 90 },
-  { name: "Photoshop", level: 80 },
+  { name: "Rhino", level: 80 },
   { name: "InDesign", level: 85 },
+  { name: "V-Ray", level: 65 },
+  { name: "Office", level: 90 },
 ];
 
 export interface TimelineEntry {
